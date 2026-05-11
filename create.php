@@ -55,9 +55,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $dupRef = $dupRow['booking_ref'];
         // Don't add to $errors — handled separately in the template
     } elseif (empty($errors)) {
+      
         $ref  = generateRef($conn);
-        $uid  = currentUser()['id'];
-        $stmt = $conn->prepare("INSERT INTO bookings
+        $uid  = currentUser()['id'] ?? null;
+
+if ($uid !== null) {
+    $chk = $conn->prepare("SELECT id FROM users WHERE id = ? LIMIT 1");
+    $chk->bind_param('i', $uid);
+    $chk->execute();
+    if (!$chk->get_result()->fetch_assoc()) {
+        $uid = null;
+    }
+}
+
+$stmt = $conn->prepare("INSERT INTO bookings
             (booking_ref, customer_name, driver_name, pickup_location, drop_off_location,
              ride_date, fare, ride_status, payment_status, notes, created_by)
             VALUES (?,?,?,?,?,?,?,?,?,?,?)");
