@@ -55,9 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $dupRef = $dupRow['booking_ref'];
         // Don't add to $errors — handled separately in the template
     } elseif (empty($errors)) {
-      
         $ref  = generateRef($conn);
-        $uid  = currentUser()['id'] ?? null;
+$uid  = currentUser()['id'] ?? null;
 
 if ($uid !== null) {
     $chk = $conn->prepare("SELECT id FROM users WHERE id = ? LIMIT 1");
