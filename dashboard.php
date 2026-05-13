@@ -493,37 +493,37 @@ layout_head('Dashboard');
   <div class="section-label">Key Metrics</div>
   <div class="stat-grid">
     <div class="stat-card cyan">
-      <span class="stat-icon">🚗</span>
+      <span class="stat-icon"></span>
       <div class="stat-label">Total Bookings</div>
       <div class="stat-value"><?php echo number_format($statsRow['total_bookings']); ?></div>
       <div class="stat-sub">Active records</div>
     </div>
     <div class="stat-card green">
-      <span class="stat-icon">💰</span>
+      <span class="stat-icon"></span>
       <div class="stat-label">Total Revenue</div>
       <div class="stat-value mono">₱<?php echo number_format($statsRow['total_revenue'], 2); ?></div>
       <div class="stat-sub">From paid rides</div>
     </div>
     <div class="stat-card amber">
-      <span class="stat-icon">📅</span>
+      <span class="stat-icon"></span>
       <div class="stat-label">This Week</div>
       <div class="stat-value"><?php echo $statsRow['this_week']; ?></div>
       <div class="stat-sub">Last 7 days</div>
     </div>
     <div class="stat-card amber">
-      <span class="stat-icon">⏳</span>
+      <span class="stat-icon"></span>
       <div class="stat-label">Pending</div>
       <div class="stat-value"><?php echo $statsRow['pending']; ?></div>
       <div class="stat-sub">Awaiting ride</div>
     </div>
     <div class="stat-card green">
-      <span class="stat-icon">✅</span>
+      <span class="stat-icon"></span>
       <div class="stat-label">Completed</div>
       <div class="stat-value"><?php echo $statsRow['completed']; ?></div>
       <div class="stat-sub">Finished rides</div>
     </div>
     <div class="stat-card red">
-      <span class="stat-icon">⚠️</span>
+      <span class="stat-icon"></span>
       <div class="stat-label">Unpaid</div>
       <div class="stat-value" style="color:var(--red);"><?php echo $statsRow['unpaid']; ?></div>
       <div class="stat-sub">Need collection</div>
@@ -534,7 +534,7 @@ layout_head('Dashboard');
   <div class="section-label" style="margin-top:4px;">Highlights</div>
   <div class="highlight-grid">
     <div class="highlight-card">
-      <div class="highlight-icon amber">🏆</div>
+      <div class="highlight-icon amber"></div>
       <div>
         <div class="highlight-card-label">Top Driver</div>
         <div class="highlight-card-value">
@@ -546,7 +546,7 @@ layout_head('Dashboard');
       </div>
     </div>
     <div class="highlight-card">
-      <div class="highlight-icon cyan">📍</div>
+      <div class="highlight-icon cyan"></div>
       <div>
         <div class="highlight-card-label">Busiest Route</div>
         <div class="highlight-card-value">
